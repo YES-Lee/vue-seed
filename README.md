@@ -1,4 +1,4 @@
-# blog-manager
+# vue-seed
 
 ## Project setup
 ```

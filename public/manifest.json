@@ -1,6 +1,6 @@
 {
-  "name": "blog-manager",
-  "short_name": "blog-manager",
+  "name": "vue-seed",
+  "short_name": "vue-seed",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

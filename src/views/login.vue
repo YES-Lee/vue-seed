@@ -1,5 +1,5 @@
 <template>
-  <div class="homt-page"></div>
+  <div class="login-page"></div>
 </template>
 
 <script>
