@@ -27,7 +27,7 @@ export default {
           key: 'name'
         },
         {
-          title: '邀请时间',
+          title: '注册时间',
           key: 'createTime'
         }
       ],
