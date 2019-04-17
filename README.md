@@ -1,4 +1,6 @@
-# vue-seed
+# hr-promoter-client
+
+hr经销商/推广商后台管理
 
 ## Project setup
 ```

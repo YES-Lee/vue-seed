@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import { getToken } from './utils'
 
-const devUrl = 'http://localhost:8080/admin'
+const devUrl = 'http://localhost:7001/api/hr-promoter/v1'
 const prodUrl = 'https://'
 
 const httpClient = Axios.create({

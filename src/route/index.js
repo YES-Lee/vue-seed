@@ -1,20 +1,39 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { beforeEach } from './guard'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/layout/dashboard'
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: () => import('../views/home')
+      path: '/layout',
+      meta: {
+        requiredAuth: true
+      },
+      component: () => import('../views/layout'),
+      children: [
+        {
+          path: '',
+          redirect: 'dashboard'
+        },
+        {
+          path: 'dashboard',
+          name: 'Dashboard',
+          component: () => import('../views/pages/dashboard')
+        },
+        {
+          path: 'myUrl',
+          name: 'MyUrl',
+          component: () => import('../views/pages/my_url')
+        }
+      ]
     },
     {
       path: '/login',
@@ -23,3 +42,7 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach(beforeEach)
+
+export default router

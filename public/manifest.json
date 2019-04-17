@@ -1,6 +1,6 @@
 {
-  "name": "vue-seed",
-  "short_name": "vue-seed",
+  "name": "hr-promoter-client",
+  "short_name": "hr-promoter-client",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
