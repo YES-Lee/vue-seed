@@ -11,13 +11,17 @@
     <Layout>
       <Sider hide-trigger :style="{background: '#fff'}">
         <Menu :active-name="currentMenu" theme="light" width="auto" @on-select="selectMenu">
+          <MenuItem name="MyUrl">
+            <Icon type="ios-link"></Icon>
+            我的邀请链接
+          </MenuItem>
           <MenuItem name="Dashboard">
             <Icon type="ios-compass-outline"></Icon>
             我邀请的人
           </MenuItem>
-          <MenuItem name="MyUrl">
-            <Icon type="ios-compass-outline"></Icon>
-            我的邀请链接
+          <MenuItem name="Consume">
+            <Icon type="ios-card"></Icon>
+            用户消费
           </MenuItem>
         </Menu>
       </Sider>
@@ -37,12 +41,12 @@
 export default {
   data () {
     return {
-      currentMenu: 'Dashboard'
+      currentMenu: 'MyUrl'
     }
   },
   watch: {
     '$route.name' (newVal) {
-      this.currentMenu = newVal || 'Dashboard'
+      this.currentMenu = newVal || 'MyUrl'
     }
   },
   methods: {

@@ -29,6 +29,11 @@ const router = new Router({
           component: () => import('../views/pages/dashboard')
         },
         {
+          path: 'consume',
+          name: 'Consume',
+          component: () => import('../views/pages/consume')
+        },
+        {
           path: 'myUrl',
           name: 'MyUrl',
           component: () => import('../views/pages/my_url')

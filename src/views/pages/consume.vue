@@ -1,7 +1,7 @@
 <template>
-  <Layout class="dashboard-page">
+  <Layout class="consume-page">
     <Row>
-      <h1 style="text-align: right;">总人数：{{dataList.length}}人</h1>
+      <h1 style="text-align: right;">总金额：¥{{totalMoney / 100}}</h1>
     </Row>
     <Row style="margin-top: 15px;">
       <Table :columns="columns" :data="dataList"/>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { getMyInvited } from '../../api/user'
+import { getConsumeInfo } from '../../api/user'
 
 export default {
   data () {
@@ -22,19 +22,28 @@ export default {
           width: 60
         },
         {
-          title: 'ID',
-          key: 'id'
+          title: '用户ID',
+          key: 'userId'
         },
         {
           title: '昵称',
           key: 'name'
         },
         {
-          title: '注册时间',
-          key: 'createTime'
+          title: '消费项目',
+          key: 'title'
+        },
+        {
+          title: '消费金额',
+          key: 'amount'
+        },
+        {
+          title: '消费时间',
+          key: 'updateTime'
         }
       ],
-      dataList: []
+      dataList: [],
+      totalMoney: 0
     }
   },
   created () {
@@ -43,7 +52,9 @@ export default {
   methods: {
     async getList () {
       try {
-        this.dataList = await getMyInvited()
+        const { list, totalMoney } = await getConsumeInfo()
+        this.dataList = list
+        this.totalMoney = totalMoney
       } catch (e) {
         console.error(e)
         this.$Message.error(e.message)
@@ -54,7 +65,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.dashboard-page {
+.consume-page {
   height: 100%;
   background-color: #fff;
 }
