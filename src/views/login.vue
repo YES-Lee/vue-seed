@@ -6,7 +6,7 @@
       </Col>
     </Row>
     <Row class="login-form-row" type="flex" justify="center">
-      <Col :lg="4" :md="8" :sm="8" :xs="24">
+      <Col :xxl="2" :xl="3" :lg="4" :md="6" :sm="8" :xs="24">
         <Form ref="form" :model="accountInfo" :rules="validator">
           <FormItem prop="account">
             <Input placeholder="请输入用户名" v-model="accountInfo.account" @keypress.native.enter="login">
@@ -22,7 +22,7 @@
       </Col>
     </Row>
     <Row class="login-form-button-row" type="flex" justify="center">
-      <Col :lg="4" :md="8" :sm="8" :xs="24">
+      <Col :xxl="2" :xl="3" :lg="4" :md="6" :sm="8" :xs="24">
         <Row type="flex">
           <Button type="primary" style="width: 100%" @click.native="login">登录</Button>
         </Row>

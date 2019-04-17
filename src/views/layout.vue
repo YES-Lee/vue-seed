@@ -1,11 +1,12 @@
 <template>
   <Layout class="layout-page">
-    <Header>
-      <Menu mode="horizontal" theme="dark" active-name="1">
+    <Header class="layout-header">
+      <Menu class="header-nav" theme="dark" >
         <div class="layout-logo">
           <h1>HR法律管家推广系统</h1>
         </div>
       </Menu>
+      <Button class="logout-btn" type="primary" @click.native="logout">退出</Button>
     </Header>
     <Layout>
       <Sider hide-trigger :style="{background: '#fff'}">
@@ -47,6 +48,9 @@ export default {
   methods: {
     selectMenu (menu) {
       this.$router.replace({ name: menu })
+    },
+    logout () {
+      this.$store.commit('user/logout')
     }
   }
 }
@@ -55,6 +59,16 @@ export default {
 <style lang="less" scoped>
 .layout-page {
   height: 100%;
+  .layout-header {
+    display: flex;
+    align-items: center;
+    .header-nav {
+      flex: 1 1 auto;
+    }
+    .logout-btn {
+      flex: 0 0 auto;
+    }
+  }
 }
 
 .layout-logo {

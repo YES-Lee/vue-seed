@@ -2,7 +2,7 @@ import Axios from 'axios'
 import { getToken } from './utils'
 
 const devUrl = 'http://localhost:7001/api/hr-promoter/v1'
-const prodUrl = 'https://'
+const prodUrl = 'http://hr.laway.cn/api/hr-promoter/v1'
 
 const httpClient = Axios.create({
   baseURL: process.env.NODE_ENV === 'production' ? prodUrl : devUrl,
