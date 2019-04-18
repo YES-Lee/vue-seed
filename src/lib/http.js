@@ -35,7 +35,7 @@ httpClient.interceptors.response.use(({ data }) => {
   }
 }, err => {
   if (err.response.status === 401) {
-    source.cancel()
+    // source.cancel()
     router.replace({ name: 'Login' })
     return Promise.reject(new Error('登录超时'))
   }
