@@ -3,7 +3,7 @@ import { getToken } from './utils'
 import router from '../route'
 
 const devUrl = 'http://localhost:7001/api/hr-promoter/v1'
-const prodUrl = 'http://hr.laway.cn/api/hr-promoter/v1'
+const prodUrl = '/api/hr-promoter/v1'
 
 const httpClient = Axios.create({
   baseURL: process.env.NODE_ENV === 'production' ? prodUrl : devUrl,
