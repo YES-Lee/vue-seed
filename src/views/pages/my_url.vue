@@ -1,7 +1,7 @@
 <template>
   <Layout class="my-url-page">
     <Row style="margin-top: 15px;">
-      <h1>我的邀请链接：{{userInfo.url}}</h1>
+      <h1>我的邀请链接：https://hr.laway.cn/i/{{userInfo.url}}</h1>
     </Row>
   </Layout>
 </template>
