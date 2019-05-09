@@ -15,6 +15,7 @@ export async function getMyInvited () {
     const result = await httpClient.get('/user/getMyInvited')
     result.data.forEach(item => {
       item.createTime = new Date(item.createTime).toLocaleString()
+      item.name = decodeURIComponent(item.name)
     })
     return result.data
   } catch (e) {
@@ -31,6 +32,7 @@ export async function getConsumeInfo () {
       totalMoney = totalMoney + item.amount
       item.amount = '¥' + (item.amount / 100)
       item.updateTime = new Date(item.updateTime).toLocaleString()
+      item.name = decodeURIComponent(item.name)
     })
     return {
       totalMoney,
