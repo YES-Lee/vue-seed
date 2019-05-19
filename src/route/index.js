@@ -10,35 +10,7 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      redirect: '/layout/dashboard'
-    },
-    {
-      path: '/layout',
-      meta: {
-        requiredAuth: true
-      },
-      component: () => import('../views/layout'),
-      children: [
-        {
-          path: '',
-          redirect: 'dashboard'
-        },
-        {
-          path: 'dashboard',
-          name: 'Dashboard',
-          component: () => import('../views/pages/dashboard')
-        },
-        {
-          path: 'consume',
-          name: 'Consume',
-          component: () => import('../views/pages/consume')
-        },
-        {
-          path: 'myUrl',
-          name: 'MyUrl',
-          component: () => import('../views/pages/my_url')
-        }
-      ]
+      redirect: '/login'
     },
     {
       path: '/login',

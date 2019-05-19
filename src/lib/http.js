@@ -2,8 +2,8 @@ import Axios from 'axios'
 import { getToken } from './utils'
 import router from '../route'
 
-const devUrl = 'http://localhost:7001/api/hr-promoter/v1'
-const prodUrl = '/api/hr-promoter/v1'
+const devUrl = ''
+const prodUrl = ''
 
 const httpClient = Axios.create({
   baseURL: process.env.NODE_ENV === 'production' ? prodUrl : devUrl,
@@ -34,7 +34,7 @@ httpClient.interceptors.response.use(({ data }) => {
     return Promise.reject(new Error(data.msg))
   }
 }, err => {
-  if (err.response.status === 401) {
+  if (err.response && err.response.status === 401) {
     // source.cancel()
     router.replace({ name: 'Login' })
     return Promise.reject(new Error('登录超时'))

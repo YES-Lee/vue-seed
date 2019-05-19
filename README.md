@@ -1,4 +1,4 @@
-# hr-promoter-client
+# vue-seed
 
 hr经销商/推广商后台管理
 
